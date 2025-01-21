@@ -18,7 +18,7 @@ ShopyPal is an e-commerce platform built with Next.js, TypeScript and MySQL. It'
 ## Technologies Used
 
 - **Frontend**: React, TypeScript
-- **Backend**: Node.js, Express
+- **Backend**: NextJS API
 - **Database**: MySQL
 - **Authentication**: JWT, bcrypt
 
