@@ -1,0 +1,61 @@
+@use "../variables" as *;
+
+.auth-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: calc(100% - 50px);
+}
+
+.form {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 1rem 4rem;
+  border-radius: 5px;
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  place-items: center;
+
+  height: fit-content;
+
+  h6 {
+    text-align: center;
+  }
+
+  &_field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    input {
+      border-bottom: 1px solid var(--border-color);
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      font-size: 1rem;
+    }
+  }
+
+  .form_status {
+
+    animation: blinkingRed 1s infinite;
+
+    @keyframes blinkingRed {
+      0% {
+        color: red;
+        transform: scale(1);
+      }
+      50% {
+        color: var(--text-primary);
+        transform: scale(1.1);
+      }
+      100% {
+        color: red;
+        transform: scale(1);
+      }
+    }
+  }
+}
