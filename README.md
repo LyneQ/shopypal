@@ -78,4 +78,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## Contact
 
-For any inquiries or support, please contact [yourname@domain.com](mailto:yourname@domain.com).
+For any inquiries or support, please contact [hey@lyneq.tech](mailto:hey@lyneq.tech).
