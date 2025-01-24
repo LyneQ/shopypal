@@ -12,8 +12,8 @@ import React from "react";
 const inter = Inter({subsets: ['latin']})
 
 export const metadata: Metadata = {
-    title: process.env.NUXT_APPNAME?.toString(),
-    description: `On ${process.env.NUXT_APPNAME} sell your old plush or save a abandoned plush by buying it, life is too short to not have a plush.`,
+    title: process.env.NUXT_APPNAME?.toString() ?? "Default App Name",
+    description: `On ${process.env.NUXT_APPNAME ?? "our platform"} sell your old plush or save an abandoned plush by buying it. Life is too short to not have a plush.`,
     keywords: ["plush", "sell", "buy", "toys"],
 };
 
