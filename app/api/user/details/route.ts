@@ -16,9 +16,9 @@ export const POST = async (req: Request) => {
 
     const userID = AuthManager.getUserIDFromToken(token);
 
-    const userProfil = await AuthManager.getUserProfile(userID);
+    const userProfile = await AuthManager.getUserProfile(userID);
 
-    return new Response(JSON.stringify({user: userProfil}), {
+    return new Response(JSON.stringify({user: userProfile}), {
         status: 200,
         headers: {
             'Content-Type': 'application/json'

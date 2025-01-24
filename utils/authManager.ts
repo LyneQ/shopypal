@@ -34,7 +34,10 @@ export default class AuthManager {
         const userId = generateCustomUuid("123456789", 9);
 
         try {
-            await pool.query('INSERT INTO user_profile (id, firstname, lastname, role_id) VALUES (?, ?, ?, ?)', [userId, firstname, lastname, 1]);
+            const roleId = 1;
+
+            await pool.query('INSERT INTO roles (id, name) VALUES (?, ?)', [roleId, 'user']);
+            await pool.query('INSERT INTO user_profiles (id, firstname, lastname, role_id) VALUES (?, ?, ?, ?)', [userId, firstname, lastname, roleId]);
             await pool.query('INSERT INTO user_credentials (id, email, password) VALUES (?, ?, ?)', [userId, email, hashedPassword]);
         } catch (error) {
             console.error('Error inserting user data:', error);
@@ -71,11 +74,11 @@ export default class AuthManager {
 
     static async getUserProfile(userID: any): Promise<User> {
         const querry = `
-            SELECT user_profile.*, user_credentials.email
-            FROM user_profile
+            SELECT user_profiles.*, user_credentials.email
+            FROM user_profiles
                      LEFT JOIN user_credentials
-                        ON user_profile.id = user_credentials.id
-            WHERE user_profile.id = ?`
+                        ON user_profiles.id = user_credentials.id
+            WHERE user_profiles.id = ?`
 const [rows] = await pool.query(querry, [userID]) as any;
         return {
            ...rows[0]

@@ -1,7 +1,5 @@
 import {cookies} from "next/headers";
-import {redirect} from "next/navigation";
 import pool from "@/db";
-import {NextResponse} from "next/server";
 import AuthManager from "@/utils/authManager";
 
 export async function GET(request: Request) {
@@ -25,7 +23,7 @@ export async function GET(request: Request) {
                 if (!decodedToken.hasOwnProperty(key)) break;
 
                 const value = decodedToken[key];
-                const user = await pool.query('SELECT * FROM user_profile WHERE id = ?', [value]);
+                const user = await pool.query('SELECT * FROM user_profiles WHERE id = ?', [value]);
                 if (!user) {
                     try {
                         cookieStore.delete('authToken');
