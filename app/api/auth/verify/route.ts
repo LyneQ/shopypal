@@ -8,6 +8,21 @@ export async function GET(request: Request) {
         const token = cookieStore.get('authToken');
         const userIsAuthenticated = cookieStore.has('authToken');
         if (!token) return Response.redirect(`${process.env.NUXT_URL}/auth`);
+
+        AuthManager.verifyJwtToken(token.value.toString())
+            .then(
+                (decodedToken) => {
+                    console.log(decodedToken);
+                })
+        .catch((err) => {
+            if (err.name === 'TokenExpiredError') {
+                cookieStore.delete('authToken');
+                return Response.redirect(`${process.env.NUXT_URL}/auth`);
+            } else {
+                console.log(err);
+            }
+        })
+
         const decodedToken = userIsAuthenticated ? await AuthManager.verifyJwtToken(token.value.toString()) : false;
 
         if (!decodedToken) {
@@ -34,8 +49,9 @@ export async function GET(request: Request) {
                 return Response.json({isAuthenticated: true}, {status: 200});
             }
         }
-    } catch (error) {
+    } catch (error: any) {
         console.error(error);
+        // console.log(error.message)
         return Response.json({isAuthenticated: 'An error occurred'}, {status: 200});
     }
 
