@@ -1,6 +1,9 @@
-
+import HeroBanner from "@/components/Hero-banner/HeroBanner";
+import '@/styles/pages/hero.scss'
 export default function Home() {
   return (
-    <p> page.tsx</p>
+    <section>
+    <HeroBanner />
+    </section>
   );
 }

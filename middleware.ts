@@ -13,9 +13,10 @@ export async function middleware(request: NextRequest) {
     ];
     const protectedRoutes = [
         '/settings',
-        '/user',
+        '/user/me',
     ];
 
+    console.log(protectedRoutes.includes(new URL(request.url).pathname))
     if (protectedRoutes.includes(new URL(request.url).pathname)) {
         const token = request.cookies.get('authToken');
         if (!token) return NextResponse.redirect(new URL('/auth', request.url));

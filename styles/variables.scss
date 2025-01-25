@@ -22,6 +22,7 @@ $breakpoint-lg: 1024px;
   --bg-primary: #{$white};
   --bg-secondary: #{$light-gray};
   --text-primary: #{$dark-gray};
+  --text-secondary: #{$gray};
   --accent-primary: #{$blue-accent};
   --accent-primary-darken: #{$blue-accent-darken};
   --accent-secondary: #{$orange-accent};
@@ -33,6 +34,7 @@ $breakpoint-lg: 1024px;
   --bg-primary: #{$black};
   --bg-secondary: #{$dark-gray-alternate};
   --text-primary: #{$light-gray};
+  --text-secondary: #{$gray};
   --accent-primary: #{$blue-accent};
   --accent-primary-darken: #{$blue-accent-darken};
   --accent-secondary: #{$orange-accent};
@@ -41,7 +43,7 @@ $breakpoint-lg: 1024px;
 }
 
 @mixin media-query($breakpoint) {
-  @media screen and (min-width: $breakpoint) {
+  @media screen and (max-width: $breakpoint) {
     @content;
   }
 }

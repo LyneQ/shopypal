@@ -6,7 +6,6 @@ export default async function userDetails({params}: {
     const cookieStore = await cookies()
     let userProfil: any;
 
-
     try {
         const response = await fetch(`${process.env.API_BASE_URL}/user/details`, {
             method: 'POST',
