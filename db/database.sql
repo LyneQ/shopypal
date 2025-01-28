@@ -24,3 +24,16 @@ CREATE TABLE user_credentials
     password VARCHAR(255) NOT NULL,
     FOREIGN KEY (id) REFERENCES user_profiles (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
+
+CREATE TABLE products
+(
+    id                  INT PRIMARY KEY AUTO_INCREMENT NOT NULL ,
+    name                TINYTEXT NOT NULL,
+    description         TEXT NOT NULL,
+    image               varchar(100),
+    price               INT NOT NULL,
+    quantityLeft        INT NOT NULL,
+    category            varchar(32) NOT NULL,
+    promotionPercentage INT
+)

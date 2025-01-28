@@ -1,5 +1,22 @@
-@import '@/styles/variables.scss';
+//@import '@/styles/variables.scss';
+
+.wrapper {
+  margin-top: 5rem;
+}
+
+.container {
+  padding: 0 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
 .hero {
+  margin-top: 5rem;
+
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -10,10 +10,6 @@ export async function GET(request: Request) {
         if (!token) return Response.redirect(`${process.env.NUXT_URL}/auth`);
 
         AuthManager.verifyJwtToken(token.value.toString())
-            .then(
-                (decodedToken) => {
-                    console.log(decodedToken);
-                })
         .catch((err) => {
             if (err.name === 'TokenExpiredError') {
                 cookieStore.delete('authToken');
