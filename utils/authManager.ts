@@ -34,16 +34,15 @@ export default class AuthManager {
         const userId = generateCustomUuid("123456789", 9);
 
         try {
-            const roleId = 1;
 
-            await pool.query('INSERT INTO roles (id, name) VALUES (?, ?)', [roleId, 'user']);
-            await pool.query('INSERT INTO user_profiles (id, firstname, lastname, role_id) VALUES (?, ?, ?, ?)', [userId, firstname, lastname, roleId]);
+            await pool.query('INSERT INTO roles (id, name) VALUES (?, ?)', [userId, 'user']);
+            await pool.query('INSERT INTO user_profiles (id, firstname, lastname) VALUES (?, ?, ?)', [userId, firstname, lastname]);
             await pool.query('INSERT INTO user_credentials (id, email, password) VALUES (?, ?, ?)', [userId, email, hashedPassword]);
         } catch (error) {
             console.error('Error inserting user data:', error);
             return {message: 'Error creating user'};
         }
-        const userProfile = {id: userId, firstname, lastname, role_id: 1};
+        const userProfile = {id: userId, firstname, lastname};
         return {
             message: 'User created', token: 'fake-jwt-token', receivedBody: userProfile
         }

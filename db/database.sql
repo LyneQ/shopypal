@@ -4,8 +4,8 @@ USE shopypal;
 
 CREATE TABLE roles
 (
-    id   INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(50) NOT NULL UNIQUE
+    id   CHAR(36) PRIMARY KEY,
+    name VARCHAR(50) NOT NULL
 );
 
 CREATE TABLE user_profiles
@@ -13,9 +13,9 @@ CREATE TABLE user_profiles
     id        CHAR(36) PRIMARY KEY,
     firstname VARCHAR(100) NOT NULL,
     lastname  VARCHAR(100) NOT NULL,
-    role_id   INT          NOT NULL,
-    FOREIGN KEY (role_id) REFERENCES roles (id) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (id) REFERENCES roles (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
+
 
 CREATE TABLE user_credentials
 (
