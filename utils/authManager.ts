@@ -66,8 +66,8 @@ export default class AuthManager {
     }
 
     static getUserIDFromToken(token: any) {
-       if (!token.value) return {message: 'No token provided', token: null};
-        const decodedJWT: any = jwtDecode(token.value);
+       if (!token) return {message: 'No token provided', token: null};
+        const decodedJWT: any = jwtDecode(token);
         return decodedJWT.userID;
     }
 

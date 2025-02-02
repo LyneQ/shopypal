@@ -22,7 +22,7 @@ export async function middleware(request: NextRequest) {
         if (!token) return NextResponse.redirect(new URL('/auth', request.url));
 
         try {
-            console.log("TOKEN", token);
+            console.log(`[middleware]: triggered Token`);
             // TODO: use JOSE library to manage JWT
 
             return NextResponse.next();

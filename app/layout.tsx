@@ -8,6 +8,7 @@ import SearchBar from '@/components/SearchBar';
 import {cookies} from "next/headers";
 import AuthMenuBar from "@/components/AuthMenuBar";
 import React from "react";
+import { CookiesProvider } from "next-client-cookies/server";
 
 const inter = Inter({subsets: ['latin']})
 
@@ -23,13 +24,15 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
         <html lang="en">
         <body className={`${inter.className}`}>
         <ThemeProvider>
-            <nav className={"navigation"}>
+            <CookiesProvider>
+                <nav className={"navigation"}>
                 <p className={'navigation_logo'}><Link href={'/'} className={'silent'}>{process.env.NUXT_APPNAME}</Link>
                 </p>
                 <SearchBar/>
                 <AuthMenuBar />
             </nav>
-            {children}
+                {children}
+            </CookiesProvider>
         </ThemeProvider>
         </body>
         </html>
