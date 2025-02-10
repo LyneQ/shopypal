@@ -8,12 +8,12 @@
 ShopyPal is an e-commerce platform built with Next.js, TypeScript and MySQL. It's a project that I'm currently working on my free time. with the goal of learning more about Next.js and making a complete e-commerce platform.
 ## Features
 
-- User Authentication (Login, Register)
-- JWT Token Verification
-- Secure Password Hashing
-- User Profile Management
-- Product Listing and Details 
-- Cart Management
+- [x] User Authentication (Login, Register)
+- [ ] User Profile Management
+- [ ] Product Listing and Details 
+- [ ] Cart Management
+- [ ] sell article
+- [ ] review vendor
 
 ## Technologies Used
 
