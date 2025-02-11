@@ -1,0 +1,36 @@
+#settings {
+  display: grid;
+  grid-template-columns: 0.4fr 3fr;
+  height: calc(100vh - 45px);
+}
+
+#setting-bar {
+  background-color: var(--bg-secondary);
+  //border-top: 1px solid var(--border-color);
+  padding: 0 1rem;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding: 0.4rem;
+      border-radius: 0.5rem;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      display: flex;
+      gap: 10px;
+
+      &:hover {
+        background-color: var(--bg-primary);
+      }
+      svg {
+        width: 20px;
+        fill: var(--border-color);
+      }
+    }
+  }
+}

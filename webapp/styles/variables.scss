@@ -1,0 +1,49 @@
+$white: #FFFFFF;
+$light-gray: #E5E7EB;
+$gray : #818181;
+$dark-gray: #333333;
+$dark-gray-alternate: #1E1E1E;
+$black: #121212;
+
+$blue-accent: #3B82F6;
+$orange-accent: #F97316;
+$blue-accent-darken: #2563EB;
+$orange-accent-darken: #EA580C;
+
+$green: #10B981;
+$red: #EF4444;
+$yellow: #F59E0B;
+
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+[data-theme="light"] {
+  --bg-primary: #{$white};
+  --bg-secondary: #{$light-gray};
+  --text-primary: #{$dark-gray};
+  --text-secondary: #{$gray};
+  --accent-primary: #{$blue-accent};
+  --accent-primary-darken: #{$blue-accent-darken};
+  --accent-secondary: #{$orange-accent};
+  --accent-secondary-darken: #{$orange-accent-darken};
+  --border-color: #{$gray};
+}
+
+[data-theme="dark"] {
+  --bg-primary: #{$black};
+  --bg-secondary: #{$dark-gray-alternate};
+  --text-primary: #{$light-gray};
+  --text-secondary: #{$gray};
+  --accent-primary: #{$blue-accent};
+  --accent-primary-darken: #{$blue-accent-darken};
+  --accent-secondary: #{$orange-accent};
+  --accent-secondary-darken: #{$orange-accent-darken};
+  --border-color: #{$gray};
+}
+
+@mixin media-query($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}

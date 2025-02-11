@@ -1,0 +1,55 @@
+/* [project]/styles/pages/layout.scss.css [app-client] (css) */
+[data-theme="light"] {
+  --bg-primary: #fff;
+  --bg-secondary: #e5e7eb;
+  --text-primary: #333;
+  --text-secondary: #818181;
+  --accent-primary: #3b82f6;
+  --accent-primary-darken: #2563eb;
+  --accent-secondary: #f97316;
+  --accent-secondary-darken: #ea580c;
+  --border-color: #818181;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --text-primary: #e5e7eb;
+  --text-secondary: #818181;
+  --accent-primary: #3b82f6;
+  --accent-primary-darken: #2563eb;
+  --accent-secondary: #f97316;
+  --accent-secondary-darken: #ea580c;
+  --border-color: #818181;
+}
+
+.navigation {
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 5px 0 var(--border-color);
+  color: var(--text-primary);
+  transition: all .3s ease-in-out;
+  z-index: 2;
+  position: sticky;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+  padding: .5rem;
+  max-height: 45px;
+}
+
+.navigation_search {
+  display: flex;
+}
+
+.navigation_search select {
+  border-right: 1px solid var(--border-color);
+}
+
+.navigation .auth {
+  padding: 0 5px;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=styles_pages_layout_scss_b52d8e.css.map*/

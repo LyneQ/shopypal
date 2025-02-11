@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model products {
+  id                  Int     @id @default(autoincrement())
+  name                String  @db.TinyText
+  description         String  @db.Text
+  image               String? @db.VarChar(100)
+  price               Int
+  quantityLeft        Int
+  category            String  @db.VarChar(32)
+  promotionPercentage Int?
+}
+
+model roles {
+  id            String         @id @db.Char(36)
+  name          String         @db.VarChar(50)
+  user_profiles user_profiles?
+}
+
+model user_credentials {
+  id            String        @id @db.Char(36)
+  email         String        @unique(map: "email") @db.VarChar(255)
+  password      String        @db.VarChar(255)
+  user_profiles user_profiles @relation(fields: [id], references: [id], onDelete: Cascade, map: "user_credentials_ibfk_1")
+}
+
+model user_profiles {
+  id               String            @id @db.Char(36)
+  firstname        String            @db.VarChar(100)
+  lastname         String            @db.VarChar(100)
+  user_credentials user_credentials?
+  roles            roles             @relation(fields: [id], references: [id], onDelete: Cascade, map: "user_profiles_ibfk_1")
+}

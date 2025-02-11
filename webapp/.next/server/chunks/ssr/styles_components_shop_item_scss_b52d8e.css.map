@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/styles/components/shop/item.scss.css"],"sourcesContent":[".item{padding:1rem;margin-bottom:1rem;border-radius:5px;box-shadow:0 0 10px 11px rgba(0,0,0,.1882352941);background-color:rgba(197,197,197,.1882352941);width:fit-content;display:flex;flex-direction:column;gap:.5rem}.item .title{margin:0;text-decoration:underline}.item .price{color:var(--primary-color);font-weight:bold}.item img{border-radius:12px}.item .description{font-size:.8rem}.item button{margin:0 auto}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;AAAuN;;;;;AAAgD;;;;;AAAyD;;;;AAA6B;;;;AAAmC"}},
+    {"offset": {"line": 34, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

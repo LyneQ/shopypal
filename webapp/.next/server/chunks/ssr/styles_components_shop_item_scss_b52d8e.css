@@ -1,0 +1,36 @@
+/* [project]/styles/components/shop/item.scss.css [app-client] (css) */
+.item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 0 10px 11px #00000030;
+  background-color: #c5c5c530;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.item .title {
+  margin: 0;
+  text-decoration: underline;
+}
+
+.item .price {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.item img {
+  border-radius: 12px;
+}
+
+.item .description {
+  font-size: .8rem;
+}
+
+.item button {
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=styles_components_shop_item_scss_b52d8e.css.map*/

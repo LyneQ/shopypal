@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file://E%3A/Code/web/shopypal/webapp/app/error.tsx"],"sourcesContent":["'use client'\n\n\nimport {useEffect} from 'react'\n\nexport default function Error({error, reset,}: {\n    error: Error & { digest?: string }\n    reset: () => void\n}) {\n    useEffect(() => {\n        console.error(error)\n    }, [error])\n\n    return (\n        <div className={\"error-box\"}>\n            <h2>Something went wrong!</h2>\n            <button\n                onClick={\n                    // Attempt to recover by trying to re-render the segment\n                    () => reset()\n                }\n            >\n                Try again\n            </button>\n        </div>\n    )\n}"],"names":[],"mappings":";;;;AAGA;;;AAHA;;AAKe,SAAS,MAAM,EAAC,KAAK,EAAE,KAAK,EAG1C;;IACG,CAAA,GAAA,6JAAA,CAAA,YAAS,AAAD;2BAAE;YACN,QAAQ,KAAK,CAAC;QAClB;0BAAG;QAAC;KAAM;IAEV,qBACI,6LAAC;QAAI,WAAW;;0BACZ,6LAAC;0BAAG;;;;;;0BACJ,6LAAC;gBACG,SACI,wDAAwD;gBACxD,IAAM;0BAEb;;;;;;;;;;;;AAKb;GArBwB;KAAA"}},
+    {"offset": {"line": 58, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

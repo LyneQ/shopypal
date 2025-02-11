@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 55, "column": 0}, "map": {"version":3,"sources":["file://E%3A/Code/web/shopypal/webapp/app/api/auth/logout/route.ts"],"sourcesContent":["import {cookies} from \"next/headers\";\nimport {redirect} from \"next/navigation\";\nimport {NextResponse} from \"next/server\";\n\nexport async function POST(request: Request) {\n    try {\n        const cookieStore = await cookies();\n        const userIsAuthenticated = cookieStore.has('authToken');\n\n        if (userIsAuthenticated) {\n            cookieStore.delete('authToken');\n            console.log(cookieStore.get('authToken'));\n        }\n\n        return NextResponse.redirect(new URL('/login', request.url).toString());\n\n    } catch (error) {\n        console.error(error);\n        return new Response('An error occurred', {status: 500});\n    }\n}"],"names":[],"mappings":";;;AAAA;AAEA;;;AAEO,eAAe,KAAK,OAAgB;IACvC,IAAI;QACA,MAAM,cAAc,MAAM,CAAA,GAAA,iIAAA,CAAA,UAAO,AAAD;QAChC,MAAM,sBAAsB,YAAY,GAAG,CAAC;QAE5C,IAAI,qBAAqB;YACrB,YAAY,MAAM,CAAC;YACnB,QAAQ,GAAG,CAAC,YAAY,GAAG,CAAC;QAChC;QAEA,OAAO,gIAAA,CAAA,eAAY,CAAC,QAAQ,CAAC,IAAI,IAAI,UAAU,QAAQ,GAAG,EAAE,QAAQ;IAExE,EAAE,OAAO,OAAO;QACZ,QAAQ,KAAK,CAAC;QACd,OAAO,IAAI,SAAS,qBAAqB;YAAC,QAAQ;QAAG;IACzD;AACJ"}},
+    {"offset": {"line": 78, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

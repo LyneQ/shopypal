@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack://[project]/styles/components/AuthMenuBar.scss.css"],"sourcesContent":[".login-box{display:flex;align-items:flex-start;position:relative}.login-box svg{fill:var(--text-primary)}.hidden-item{display:none}.hidden-item-active{position:absolute;right:-80%;top:100%;padding:.5rem;border-radius:.5rem;display:flex;flex-direction:column;background-color:var(--bg-secondary)}.hidden-item-active a{color:var(--text-primary);text-decoration:none;padding:.5rem;border-radius:.5rem;transition:background-color .3s}.hidden-item-active a:hover{background-color:var(--bg-primary)}"],"names":[],"mappings":"AAAA;;;;;;AAAiE;;;;AAAwC;;;;AAA0B;;;;;;;;;;;AAAoK;;;;;;;;AAAuI"}},
+    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"A"}}]
+}

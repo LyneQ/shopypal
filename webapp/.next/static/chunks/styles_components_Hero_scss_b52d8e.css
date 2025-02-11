@@ -1,0 +1,69 @@
+/* [project]/styles/components/Hero.scss.css [app-client] (css) */
+.wrapper {
+  margin-top: 5rem;
+}
+
+.container {
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.hero {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero img {
+  max-width: 900px;
+  max-height: 400px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.hero .hero-text {
+  text-align: center;
+  max-width: 600px;
+  font-size: .8rem;
+}
+
+.hero .hero-text .review {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .hero-text .review .stars {
+  display: flex;
+  flex-direction: row;
+  gap: .1rem;
+  margin-right: .5rem;
+}
+
+.hero .hero-text .review b {
+  margin: 0 .5rem;
+}
+
+.hero .hero-text .review img {
+  width: 1rem;
+}
+
+.hero .hero-text .author {
+  font-size: .9rem;
+  color: var(--text-secondary);
+}
+
+.hero .hero-text > :not(:last-child) {
+  margin-bottom: .2rem;
+}
+
+/*# sourceMappingURL=styles_components_Hero_scss_b52d8e.css.map*/

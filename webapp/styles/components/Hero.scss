@@ -1,0 +1,71 @@
+//@import '@/styles/variables.scss';
+
+.wrapper {
+  margin-top: 5rem;
+}
+
+.container {
+  padding: 0 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(5, minmax(100px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.hero {
+  margin-top: 5rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  img {
+    max-width: 900px;
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .hero-text {
+    text-align: center;
+    max-width: 600px;
+    font-size: 0.8rem;
+
+    .review {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      .stars {
+        display: flex;
+        flex-direction: row;
+        gap: 0.1rem;
+        margin-right: 0.5rem;
+      }
+
+      b {
+        margin: 0 0.5rem;
+      }
+
+      img {
+        width: 1rem;
+
+      }
+    }
+
+    .author {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    & > *:not(:last-child) {
+      margin-bottom: 0.2rem;
+    }
+  }
+}
