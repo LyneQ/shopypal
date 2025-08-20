@@ -45,7 +45,7 @@ export default async function RootLayout({
                 <>
                   <a href="/me" className="hover:underline">My account</a>
                   <form action="/api/auth/sign-out" method="post">
-                    <button className="hover:underline" type="submit">Sign out</button>
+                    <button className="hover:underline hover:cursor-pointer" type="submit">Sign out</button>
                   </form>
                 </>
               ) : (

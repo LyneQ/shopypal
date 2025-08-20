@@ -20,13 +20,13 @@ export default async function MePage() {
             <img alt="avatar" src={session.user.image} className="w-16 h-16 rounded-full" />
           )}
           <form action="/api/auth/sign-out" method="post">
-            <button className="border px-3 py-1 rounded" type="submit">Sign out</button>
+            <button className="border px-3 py-1 rounded hover:cursor-pointer hover:underline" type="submit">Sign out</button>
           </form>
         </div>
       ) : (
         <div className="space-y-3">
           <p>You are not signed in.</p>
-          <p className="text-sm opacity-70">Use your preferred auth method once configured.</p>
+          <p className="text-sm opacity-70">Please sign-in to have access to this page</p>
         </div>
       )}
     </div>
