@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shopypal – Plushies Store",
-  description: "An adorable e-commerce for plushies.",
+    title: "Shopypal – Plushies Store",
+    description: "An adorable e-commerce for plushies.",
 };
 
 // Ensure Node.js runtime for server components that access the DB via better-sqlite3

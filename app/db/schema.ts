@@ -50,6 +50,28 @@ export const verification = sqliteTable("verification", {
   updatedAt: integer("updated_at", { mode: "timestamp" }),
 });
 
+// Product-related tables
+export const products = sqliteTable("products", {
+  id: text("id").primaryKey().notNull(),
+  name: text("name").notNull(),
+  description: text("description"),
+  priceCents: integer("price_cents").notNull(),
+  currency: text("currency").notNull().default("USD"),
+  imageUrl: text("image_url"),
+  createdAt: integer("created_at", { mode: "timestamp" }).notNull(),
+  updatedAt: integer("updated_at", { mode: "timestamp" }).notNull(),
+});
+
+export const categories = sqliteTable("categories", {
+  id: text("id").primaryKey().notNull(),
+  name: text("name").notNull(),
+});
+
+export const productCategories = sqliteTable("product_categories", {
+  productId: text("product_id").notNull(),
+  categoryId: text("category_id").notNull(),
+});
+
 // Export a schema object for Better Auth Drizzle adapter
 export const schema = {
   user,
