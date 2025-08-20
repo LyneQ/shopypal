@@ -105,7 +105,7 @@ export default async function ProductsPage({
       description: products.description,
       priceCents: products.priceCents,
       currency: products.currency,
-      imageUrl: products.imageUrl,
+      imageUrls: products.imageUrls,
     })
     .from(products);
 
@@ -126,7 +126,7 @@ export default async function ProductsPage({
     query = query.groupBy(products.id);
   }
 
-  const items: { id: string; name: string; description: string | null; priceCents: number; currency: string; imageUrl: string | null }[] = await query;
+  const items: { id: string; name: string; description: string | null; priceCents: number; currency: string; imageUrls: string[] | null }[] = await query;
 
   const anyFilterApplied = selectingByCategory || normalizedMin !== null || normalizedMax !== null;
 
@@ -222,12 +222,14 @@ export default async function ProductsPage({
               {items.map((p) => (
                 <div key={p.id} className="rounded-lg border border-black/10 dark:border-white/10 bg-white/70 dark:bg-black/20 overflow-hidden flex flex-col">
                   <div className="aspect-square bg-black/5 dark:bg-white/5 flex items-center justify-center overflow-hidden">
-                    {p.imageUrl ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={p.imageUrl} alt={p.name} className="w-full h-full object-cover transform transition-transform duration-300 ease-out hover:scale-110" />
-                    ) : (
-                      <div className="text-5xl">🧸</div>
-                    )}
+                      <Link href={`/products/${p.id}`} className="w-full h-full flex items-center justify-center">
+                          {p.imageUrls ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img src={p.imageUrls[0]} alt={p.name} className="w-full h-full object-cover transform transition-transform duration-300 ease-out hover:scale-110" />
+                          ) : (
+                              <div className="text-5xl">🧸</div>
+                          )}
+                      </Link>
                   </div>
                   <div className="p-4 space-y-1 flex-1">
                     <div className="flex items-center justify-between gap-4">

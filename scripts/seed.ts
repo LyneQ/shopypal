@@ -32,10 +32,10 @@ async function seed() {
   const demoProducts = [
     {
       name: "Cuddly Faz Bear",
-      description: "A soft and huggable brown bear plush, perfect for cozy nights.",
+      description: "Soft and huggable brown bear plush, perfect for cozy nights.",
       priceCents: 2499,
       currency: "USD",
-      imageUrl: "/products/faz-bear.webp",
+      imageUrls: ["/products/faz-bear.webp", "/products/faz-bear.webp"],
       categories: ["Animals"],
     },
     {
@@ -43,7 +43,7 @@ async function seed() {
       description: "Sparkly white unicorn plush for fantasy lovers.",
       priceCents: 2999,
       currency: "USD",
-      imageUrl: "/products/unicorn.webp",
+      imageUrls: ["/products/unicorn.webp", "/products/unicorn.webp"],
       categories: ["Fantasy"],
     },
     {
@@ -51,7 +51,7 @@ async function seed() {
       description: "Limited edition reindeer plush with cute antler",
       priceCents: 2799,
       currency: "USD",
-      imageUrl: "/products/reindeer.webp",
+      imageUrls: ["/products/reindeer.webp", "/products/reindeer.webp"],
       categories: ["Seasonal", "Animals"],
     },
     {
@@ -59,15 +59,15 @@ async function seed() {
       description: "A star-speckled dragon plush from the depths of space.",
       priceCents: 3499,
       currency: "USD",
-      imageUrl: "/products/galaxy-dragon.webp",
+      imageUrls: ["/products/galaxy-dragon.webp", "/products/galaxy-dragon.webp"],
       categories: ["Fantasy"],
     },
     {
       name: "Polar Penguin",
-      description: "Chilly but charming penguin plush with a tiny beanie.",
+      description: "Chilly but charming penguin.",
       priceCents: 2199,
       currency: "USD",
-      imageUrl: "/products/Polar-penguin.webp",
+      imageUrls: ["/products/Polar-penguin.webp", "/products/Polar-penguin.webp"],
       categories: ["Animals", "Seasonal"],
     },
   ];
@@ -93,7 +93,7 @@ async function seed() {
     description: p.description,
     priceCents: p.priceCents,
     currency: p.currency,
-    imageUrl: p.imageUrl,
+    imageUrls: p.imageUrls,
     createdAt: now,
     updatedAt: now,
   }));
